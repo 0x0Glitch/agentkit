@@ -1,5 +1,31 @@
 # AgentKit Changelog
 
+## 0.8.2
+
+### Patch Changes
+
+- [#753](https://github.com/coinbase/agentkit/pull/753) [`ff04ce9`](https://github.com/coinbase/agentkit/commit/ff04ce9dd8f6de48692560bd84b430c45576925e) Thanks [@phdargen](https://github.com/phdargen)! - Added a new action provider to call x402 protected api
+
+- [#700](https://github.com/coinbase/agentkit/pull/700) [`913beb0`](https://github.com/coinbase/agentkit/commit/913beb06541224b41d5a923474470ec9fee7de76) Thanks [@pawelpolak2](https://github.com/pawelpolak2)! - Improve the vaults.fyi provider
+
+## 0.8.1
+
+### Patch Changes
+
+- [#751](https://github.com/coinbase/agentkit/pull/751) [`97408c1`](https://github.com/coinbase/agentkit/commit/97408c1976995a8abff124cbc8baead3209da0b2) Thanks [@CarsonRoscoe](https://github.com/CarsonRoscoe)! - Fixed an indirect dependency issue
+
+## 0.8.0
+
+### Minor Changes
+
+- [#732](https://github.com/coinbase/agentkit/pull/732) [`cd044db`](https://github.com/coinbase/agentkit/commit/cd044db7ae35140726c35ba82429b0f0885ccb60) Thanks [@CarsonRoscoe](https://github.com/CarsonRoscoe)! - Renamed CDP env vars to modern naming convention
+
+## 0.7.2
+
+### Patch Changes
+
+- [#716](https://github.com/coinbase/agentkit/pull/716) [`30dc6bd`](https://github.com/coinbase/agentkit/commit/30dc6bdca68cb567f91123c21c1fe3a5774d4f6b) Thanks [@CarsonRoscoe](https://github.com/CarsonRoscoe)! - Fixed CdpV2EvmWalletProvider sendTransaction to use EIP1559 transactions
+
 ## 0.7.1
 
 ### Patch Changes

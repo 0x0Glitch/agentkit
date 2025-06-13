@@ -68,7 +68,7 @@ npm create onchain-agent@latest
 # Navigate to your project directory
 cd onchain-agent
 
-# At this point, fill in your CDP API key name, OpenAI API key, and any other environment variables in the .env.local file.
+# At this point, fill in your CDP API key id/secret, OpenAI API key, and any other environment variables in the .env.local file.
 # Then, rename the .env.local file to .env
 mv .env.local .env
 
@@ -104,7 +104,7 @@ pipx run create-onchain-agent
 # Navigate to your project directory
 cd onchain-agent
 
-# At this point, fill in your CDP API key name, OpenAI API key, and any other environment variables in the .env.local file.
+# At this point, fill in your CDP API key id/secret, OpenAI API key, and any other environment variables in the .env.local file.
 # Then, rename the .env.local file to .env
 mv .env.local .env
 
@@ -173,11 +173,13 @@ agentkit/
 │   │   ├── langchain/
 │   │   └── openai-agents-sdk/
 │   └── examples/
-│       ├── langchain-cdp-chatbot/
+│       ├── langchain-cdp-server-chatbot/
+│       ├── langchain-cdp-smart-wallet-chatbot/
 │       ├── langchain-eth-account-chatbot/
-│       ├── langchain-smart-wallet-chatbot/
+│       ├── langchain-nillion-secretvault-chatbot/
 │       ├── langchain-twitter-chatbot/
-│       └── openai-agents-cdp-voice-chatbot/
+│       ├── openai-agents-sdk-cdp-chatbot/
+│       ├── openai-agents-sdk-cdp-voice-chatbot/
 │       └── openai-agents-sdk-smart-wallet-chatbot/
 ```
 

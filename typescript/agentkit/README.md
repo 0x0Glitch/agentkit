@@ -65,8 +65,8 @@ npm install @coinbase/agentkit
 
 ```typescript
 const agentKit = await AgentKit.from({
-  cdpApiKeyName: "CDP API KEY NAME",
-  cdpApiKeyPrivate: "CDP API KEY PRIVATE KEY",
+  cdpApiKeyId: "CDP API KEY NAME",
+  cdpApiKeyPrivate: "CDP API KEY SECRET",
 });
 ```
 
@@ -76,8 +76,8 @@ If no wallet or action provider are specified, the agent will use the `CdpWallet
 
 ```typescript
 const agentKit = await AgentKit.from({
-  cdpApiKeyName: "CDP API KEY NAME",
-  cdpApiKeyPrivate: "CDP API KEY PRIVATE KEY",
+  cdpApiKeyId: "CDP API KEY NAME",
+  cdpApiKeyPrivate: "CDP API KEY SECRET",
 });
 ```
 
@@ -87,8 +87,8 @@ const agentKit = await AgentKit.from({
 import { CdpWalletProvider } from "@coinbase/agentkit";
 
 const walletProvider = await CdpWalletProvider.configureWithWallet({
-    apiKeyName: "CDP API KEY NAME",
-    apiKeyPrivate: "CDP API KEY PRIVATE KEY",
+    apiKeyId: "CDP API KEY NAME",
+    apiKeyPrivate: "CDP API KEY SECRET",
     networkId: "base-mainnet",
 });
 
@@ -106,8 +106,8 @@ const agentKit = await AgentKit.from({
     walletProvider,
     actionProviders: [
         cdpApiActionProvider({
-            apiKeyName: "CDP API KEY NAME",
-            apiKeyPrivate: "CDP API KEY PRIVATE KEY",
+            apiKeyId: "CDP API KEY NAME",
+            apiKeyPrivate: "CDP API KEY SECRET",
         }),
         pythActionProvider(),
     ],
@@ -418,6 +418,19 @@ const agent = createReactAgent({
 </table>
 </details>
 <details>
+<summary><strong>X402</strong></summary>
+<table width="100%">
+<tr>
+    <td width="200"><code>paid_request</code></td>
+    <td width="768">Makes HTTP requests to x402-protected API endpoints with automatic payment handling.</td>
+</tr>
+<tr>
+    <td width="200"><code>fetch_payment_info</code></td>
+    <td width="768">Fetches payment information from x402-protected endpoints without making payments.</td>
+</tr>
+</table>
+</details>
+<details>
 <summary><strong>ZeroDev Wallet</strong></summary>
 <table width="100%">
 <tr>
@@ -528,8 +541,8 @@ This gives your agent access to the actions defined in the action provider.
 
 ```typescript
 const agentKit = new AgentKit({
-  cdpApiKeyName: "CDP API KEY NAME",
-  cdpApiKeyPrivate: "CDP API KEY PRIVATE KEY",
+  cdpApiKeyId: "CDP API KEY NAME",
+  cdpApiKeyPrivate: "CDP API KEY SECRET",
   actionProviders: [myActionProvider()],
 });
 ```
@@ -621,8 +634,8 @@ The `CdpWalletProvider` can be configured to use a specific network by passing t
 import { CdpWalletProvider } from "@coinbase/agentkit";
 
 const walletProvider = await CdpWalletProvider.configureWithWallet({
-    apiKeyName: "CDP API KEY NAME",
-    apiKeyPrivate: "CDP API KEY PRIVATE KEY",
+    apiKeyId: "CDP API KEY NAME",
+    apiKeyPrivate: "CDP API KEY SECRET",
     networkId: "base-mainnet",
 });
 ```
@@ -636,8 +649,8 @@ import { CdpWalletProvider } from "@coinbase/agentkit";
 import { Wallet } from "@coinbase/coinbase-sdk";
 const walletProvider = await CdpWalletProvider.configureWithWallet({
     wallet,
-    apiKeyName: "CDP API KEY NAME",
-    apiKeyPrivate: "CDP API KEY PRIVATE KEY",
+    apiKeyId: "CDP API KEY NAME",
+    apiKeyPrivate: "CDP API KEY SECRET",
 });
 ```
 
@@ -678,8 +691,8 @@ import { CdpWalletProvider } from "@coinbase/agentkit";
 
 const walletProvider = await CdpWalletProvider.configureWithWallet({
     cdpWalletData: "WALLET DATA JSON STRING",
-    apiKeyName: "CDP API KEY NAME",
-    apiKeyPrivate: "CDP API KEY PRIVATE KEY",
+    apiKeyId: "CDP API KEY NAME",
+    apiKeyPrivate: "CDP API KEY SECRET",
 });
 ```
 
@@ -692,8 +705,8 @@ import { CdpWalletProvider } from "@coinbase/agentkit";
 
 const walletProvider = await CdpWalletProvider.configureWithWallet({
     cdpWalletData: "WALLET DATA JSON STRING",
-    apiKeyName: "CDP API KEY NAME",
-    apiKeyPrivate: "CDP API KEY PRIVATE KEY",
+    apiKeyId: "CDP API KEY NAME",
+    apiKeyPrivate: "CDP API KEY SECRET",
     gas: {
         gasLimitMultiplier: 2.0,  // Adjusts gas limit estimation
         feePerGasMultiplier: 2.0, // Adjusts max fee per gas
@@ -879,8 +892,8 @@ import { ZeroDevWalletProvider, CdpWalletProvider } from "@coinbase/agentkit";
 
 // First create a CDP wallet provider as the signer
 const cdpWalletProvider = await CdpWalletProvider.configureWithWallet({
-    apiKeyName: "CDP API KEY NAME",
-    apiKeyPrivate: "CDP API KEY PRIVATE KEY",
+    apiKeyId: "CDP API KEY NAME",
+    apiKeyPrivate: "CDP API KEY SECRET",
     networkId: "base-mainnet",
 });
 
@@ -1024,7 +1037,7 @@ The `CdpV2SolanaWalletProvider` supports the following Solana networks:
 
 ### SolanaKeypairWalletProvider
 
-The `SolanaKeypairWalletProvider` is a wallet provider that uses the API [Solana web3.js](https://solana-labs.github.io/solana-web3.js/).
+The `SolanaKeypairWalletProvider` is a wallet provider that uses the API [Solana web3.js](https://solana.com/docs/clients/javascript).
 
 NOTE: It is highly recommended to use a dedicated RPC provider. See [here](https://solana.com/rpc) for more info on Solana RPC infrastructure, and see [here](#rpc-url-configuration) for instructions on configuring `SolanaKeypairWalletProvider` with a custom RPC URL.
 
